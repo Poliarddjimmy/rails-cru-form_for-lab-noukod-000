@@ -17,6 +17,9 @@ class SongsController < ApplicationController
 
   def update
     @song = Song.find(params[:id])
+
+	  @song.update(song_params(:name, :description))
+	  redirect_to post_path(@post)
   end
 
   def create
@@ -24,7 +27,7 @@ class SongsController < ApplicationController
   end
 
   private
-	def artist_params(*args)
+	def song_params(*args)
 	  params.require(:artist).permit(*args)
 	end
 
