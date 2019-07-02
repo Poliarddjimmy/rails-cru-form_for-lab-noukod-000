@@ -8,15 +8,15 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find(id)
+    @song = Song.find(params[:id])
   end
 
   def edit
-    @song = Song.find(id)
+    @song = Song.find(params[:id])
   end
 
   def update
-    @song = Song.find(id)
+    @song = Song.find(params[:id])
   end
 
   def create
